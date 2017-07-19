@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Angular CRUD Operations</title>
+	<link href="style.css" rel="stylesheet">
 </head>
 <body ng-app="myApp" style=" margin-left: 20px;">
 
@@ -9,17 +10,17 @@
 
 		<h1 ng-click="helloWorld()">My TODOs!</h1>
 
-		<div style="height:30px;width:500px;background-color: grey"></div>
-		<div ng-repeat="todo in todos">
-			<table style="width:500px; border:1px dotted black;padding: 1px">	<tr>
+		<div class="greyPlat"></div>
+		<div ng-repeat="todo in todos" ng-class="{'edited':todo.edited}">
+			<table class="table">	<tr>
 
 			<td>	
 				<input type="checkbox"  ng-model="todo.completed"/>
 				<label ng-hide="editing" ng-click="helloWorld()">{{todo.name}}</label>
-				<input ng-show="editing" type="text" ng-model="todo.name"/>
+				<input ng-change="todo.edited=true" ng-blur="editing=false" ng-show="editing" type="text" ng-model="todo.name"/>
 			</td>
 				<td>
-				<div style="float: right;margin-right: 50px">
+				<div class="actions">
 					<a href="" ng-click="editing = !editing">Edit</a>
 					<a href="" ng-click="helloWorld()">Save</a>
 					<a href="">Delete</a>
