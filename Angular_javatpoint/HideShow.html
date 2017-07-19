@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>  
+
+</head>
+<body ng-app="">
+
+	<div>
+		<label ng-hide="edit">{{data}}</label>
+		<input type="text" ng-model="data" ng-show="edit"/>
+
+		<a href="" ng-click="edit=!edit">Edit</a>
+	</div>
+</body>
+</html>

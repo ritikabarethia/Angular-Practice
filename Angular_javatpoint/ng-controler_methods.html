@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS controller example with methods (variables as functions)</title>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="myController">
+	First Name <input type="text" ng-model="fname">
+	<br>
+	Last Name <input type="text" ng-model="lname">
+	<br>
+	<h1>Full Name = <span ng-bind="fullname()"></span></h1>
+</div>
+
+<script>
+	var app = angular.module("myApp",[]);
+			  app.controller("myController", function ($scope) {
+					$scope.fname = 'Ritika';
+					$scope.lname = 'Barethia';
+					$scope.fullname = function () {
+						return $scope.fname+" "+$scope.lname;
+					}
+			});
+</script>
+<script scr="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+</body>
+</html>

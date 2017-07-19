@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype (inheritance) and sibling</title>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="ParentChild_controller.js"></script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="parentCtrl">
+		<h1 ng-click="helloWorld()">ToDo App</h1>
+		<input type="checkbox" name="" ng-focus="helloWorld()"/>
+		<label ng-click="">ABC</label>
+
+		<div ng-controller="childCtrl">
+			<a href="" ng-click="newFunction()">Edit</a>
+			<a href="" ng-click="helloWorld()">Save</a>
+			<a href="" ng-click="">Delete</a>
+		</div>
+
+		<div ng-controller="secondChildCtrl">
+			<p ng-click="helloWorld()">hello world</p>
+		</div>
+	</div>
+
+	<div ng-controller="siblingCtrl">
+		{{siblingVar}}
+	</div>
+
+</body>
+</html>

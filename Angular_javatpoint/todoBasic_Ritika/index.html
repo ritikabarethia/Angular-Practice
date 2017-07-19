@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular CRUD Operations</title>
+</head>
+<body ng-app="myApp" style=" margin-left: 20px;">
+
+	<div ng-controller="mainCtrl">
+
+		<h1 ng-click="helloWorld()">My TODOs!</h1>
+
+		<div style="height:30px;width:500px;background-color: grey"></div>
+		<div ng-repeat="todo in todos">
+			<table style="width:500px; border:1px dotted black;padding: 1px">	<tr>
+
+			<td>	
+				<input type="checkbox"  ng-model="todo.completed"/>
+				<label ng-hide="editing" ng-click="helloWorld()">{{todo.name}}</label>
+				<input ng-show="editing" type="text" ng-model="todo.name"/>
+			</td>
+				<td>
+				<div style="float: right;margin-right: 50px">
+					<a href="" ng-click="editing = !editing">Edit</a>
+					<a href="" ng-click="helloWorld()">Save</a>
+					<a href="">Delete</a>
+				</div>
+			</td>
+			</tr>
+			</table>
+		</div>				<!-- ṇg-repeat -->
+		{{todos.name}}
+
+	</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="contoller.js"></script>
+</body>
+</html>
