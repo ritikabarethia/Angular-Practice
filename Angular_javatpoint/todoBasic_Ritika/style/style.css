@@ -1,0 +1,50 @@
+
+.greyPlat
+{
+	height:30px;
+	width:500px;
+	background-color: grey
+}
+.table
+{
+	width:500px;
+	 border:1px dotted black;
+	 padding: 1px
+}
+.actions
+{
+	float: right;
+	margin-right: 50px
+}
+.addNew{
+	color: white;
+	padding: 25px;
+}
+td{
+	padding: 3px
+}
+a{
+	text-decoration: none;
+	color: Green;
+}
+div a~a {
+	color :blue;
+}
+div a~a~a{
+	color: red
+}
+input{
+	padding: 6px;
+	font-size: 18px;
+}
+.edited label:after{
+	color:grey;
+	text-transform: uppercase;
+	content: "edited";
+	font-size: 18px;
+	padding-left: 10px
+}
+.todoCompleted{
+	text-decoration: line-through;
+	color: grey;
+}

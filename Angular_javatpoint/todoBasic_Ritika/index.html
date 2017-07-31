@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Angular CRUD Operations</title>
-	<link href="style.css" rel="stylesheet">
+	<link href="style/style.css" rel="stylesheet">
 </head>
 <body ng-app="myApp" style=" margin-left: 20px;">
 
@@ -10,30 +10,32 @@
 
 		<h1 ng-click="helloWorld()">My TODOs!</h1>
 
-		<div class="greyPlat"></div>
-		<div ng-repeat="todo in todos" ng-class="{'edited':todo.edited}">
+		<div class="greyPlat">
+			<a href="" ng-click="addTodo()" style="color: white; padding: 25px">+ Add new Todo</a>
+		</div>
+		<div ng-repeat="todo in todos | orderBy : 'completed'" ng-init="todo.completed=false" ng-class="{'edited':todo.edited, 'todoCompleted': todo.completed ,}">
 			<table class="table">	<tr>
 
 			<td>	
 				<input type="checkbox"  ng-model="todo.completed"/>
 				<label ng-hide="editing" ng-click="helloWorld()">{{todo.name}}</label>
-				<input ng-change="todo.edited=true" ng-blur="editing=false" ng-show="editing" type="text" ng-model="todo.name"/>
+				<input ng-show="editing" ng-change="todo.edited=true" ng-blur="editing=false" type="text" ng-model="todo.name"/>
 			</td>
 				<td>
 				<div class="actions">
 					<a href="" ng-click="editing = !editing">Edit</a>
-					<a href="" ng-click="helloWorld()">Save</a>
-					<a href="">Delete</a>
+					<a href="" ng-click="saveTodos(todo)">Save</a>
+					<a href="" ng-click="deleteTodos(todo, $index)">Delete</a>
 				</div>
 			</td>
 			</tr>
 			</table>
 		</div>				<!-- ṇg-repeat -->
-		{{todos.name}}
+
 
 	</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script src="contoller.js"></script>
+<script src="mainCtrl.js"  type="text/javascript"></script>
 </body>
 </html>
